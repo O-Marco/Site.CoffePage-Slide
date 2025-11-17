@@ -1,4 +1,4 @@
-# ☕ Website Moderno com Slider de Imagens (HTML, CSS, JS)
+# ☕ Coffe Page com Slider de Imagens 
 
 O destaque é o **Modo Slide de Imagens**, que permite navegar pelas fotos de forma suave e responsiva.
 

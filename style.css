@@ -1,0 +1,646 @@
+/* Variáveis globais para facilitar alterações no tema */
+:root {
+    --main-color: #d3ad7f; /* Cor principal do site */
+    --black: #13131a; /* Cor preta personalizada */
+    --bg: #010103; /* Cor de fundo padrão */
+    --border: 0.1rem solid rgba(255,255,255,0.3); /* Bordas padrão com transparência */
+    --azul-color: #007BFF;
+    font-size: 10px; /* Tamanho base da fonte para o site */
+}
+
+/* Reset básico e configurações globais */
+* {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+    outline: none; /* Remove contorno ao focar elementos */
+    border: none; /* Remove bordas padrão */
+    text-decoration: none; /* Remove sublinhado de links */
+    text-transform: capitalize; /* Primeira letra maiúscula em palavras */
+    transition: 0.2s linear; /* Suaviza transições de estilos */
+    font-family: "Roboto", sans-serif; /* Define fonte padrão */
+}
+
+/* Estilização do corpo da página */
+body {
+    background: linear-gradient(135deg, #010103 0%, #12121a 100%); /* Fundo com gradiente */
+    color: white; /* Cor do texto */
+    min-height: 100vh; /* Altura mínima de toda a tela */
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+/* Seções da página */
+section {
+    padding: 3rem 2rem; /* Espaçamento interno */
+    margin: 0 auto; /* Centraliza a seção */
+    max-width: 1200px; /* Largura máxima */
+}
+
+/* Cabeçalho fixo */
+.header {
+    position: fixed; /* Fixa no topo da tela */
+    top: 0; /* Topo da página */
+    left: 0;
+    right: 0;
+    z-index: 99; /* Mantém acima de outros elementos */
+    border-bottom: var(--border); /* Borda inferior */
+
+        /* 🔹 Novo */
+    background: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔹 Quando o usuário rolar */
+.header.scrolled {
+    background-color: #000000; /* Azul sólido */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Layout interno do cabeçalho */
+.header section {
+    display: flex; /* Organiza os itens em linha */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espaço entre os itens */
+    padding-top: 1.5rem; /* Espaçamento superior */
+    padding-bottom: 1.5rem; /* Espaçamento inferior */
+    
+}
+
+/* Barra de navegação */
+.navbar {
+    position: absolute; /* Posicionamento relativo ao header */
+    left: 50%; /* Centraliza horizontalmente */
+    top: 40%; /* Ajusta verticalmente */
+    transform: translateX(-50%); /* Corrige centralização */
+    display: flex; /* Coloca os links em linha */
+    gap: 2rem; /* Espaço entre os links */
+}
+
+/* Links da navbar */
+.navbar a {
+    margin: 0.1rem;
+    font-size: 1.4rem; /* Tamanho do texto */
+    color: #fff; /* Cor branca */
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre os links */
+.navbar a:hover {
+    color: var(--main-color); /* Muda a cor */
+    border-bottom: 0.1rem solid var(--main-color); /* Adiciona borda inferior */
+    padding-bottom: 0.5rem; /* Espaçamento da borda */
+    font-size: 2rem; /* Aumenta o tamanho do texto */
+}
+
+/* Ícones dentro do header */
+.icons img {
+    margin: 1rem; /* Espaçamento ao redor */
+    cursor: pointer; /* Cursor de clique */
+    transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre os ícones */
+.icons img:hover {
+    width: 35px; /* Aumenta tamanho */
+    height: 35px;
+    transform: scale(1.2);
+}
+
+/* Logo da empresa/site */
+.logo img {
+    width: 70px; /* Define largura da logo */
+    height: auto; /* Mantém proporção */
+    margin-left: 100px; /* Espaço à esquerda */
+}
+
+.btn {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+    transition: letter-spacing 0.3s ease;
+
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+
+/* inicio slide */
+/* Container full screen */
+.container {
+    width: 100vw;
+    height: 100vh; /* ocupa toda a tela */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Cada item do slider */
+.container .list .list-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.container .list .list-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cobre tudo sem deformar */
+    filter: brightness(50%);
+}
+
+.container .list .list-item .content{
+   position: absolute;
+   top: 20%;
+   right: 10%;
+   padding-right: 30%;
+   width: 80%;
+   color: #eee;
+   text-shadow: 0 5px 10px #0004;
+}
+
+.container .list .list-item .title {
+    font-size: 5em;
+    font-weight: 700;
+    line-height: 1.3em;
+    text-align: left;
+    margin-left: -30%;
+    color: #fff;
+
+}
+
+
+.container .list .list-item .description {
+    font-size: 1.5em;
+    margin-left: -30%;
+
+}
+
+.container .list .list-item .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 115px);
+    grid-template-rows: 39px;
+    margin-top: 20px;
+    gap: 5px;
+    margin-left: -31%;
+    
+}
+
+.container .list .list-item .buttons button {
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-weight: 400;
+    cursor: pointer;
+    text-transform: uppercase;
+    transform: scale(0.9); /* diminui 10% */
+
+}
+
+.container .list .list-item .buttons button:hover {
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+    transition: 0.7s;
+
+}
+
+.container .list .list-item .buttons button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+
+}
+
+.container .list .list-item .buttons button:nth-child(2):hover {
+    background-color: #eee;
+    color: #000;
+
+
+}
+
+.container .thumb {
+    position: absolute;
+    bottom: 25px;
+    left: 55%;
+    display: flex;
+    gap: 20px;
+    transform: scale(0.9); /* diminui 10% */
+    
+}
+
+.container .thumb .thumb-item {
+    width: 135px;
+    height: 200px;
+    position: relative;
+    
+}
+
+.container .thumb .thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(80%);
+    
+}
+
+.container .thumb .thumb-item img:hover {
+    background-color: transparent;
+    border: 2px solid #eee;
+    color: #eee;
+    transition: 1s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px) scale(1.05);
+    
+}
+
+.container .thumb .content1 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.5em; /* aumenta a letra */
+    font-weight: bold; /* deixa o texto mais forte */
+    
+}
+
+.container .arrows {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 120px;
+    left: 120px;
+    width: 300px;
+    margin-left: 18px;
+}
+
+.container .arrows button {
+    border-radius: 10px;
+    border: none;
+    padding: 12px 17px;
+    background-color: #0004;
+    color: #eee;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.container .arrows button:hover {
+   background-color: #eee;
+   color: #000;
+   transition: 0.7s;
+}
+
+/* INICIO SLIDE*/
+/* THUMBS MOVIMENTOS */
+
+.container.next .thumb .thumb-item {
+  animation: effecNextThumb 1s ease forwards;
+}
+
+@keyframes effecNextThumb {
+  from {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.container.back .thumb .thumb-item {
+  animation: effecBackThumb 1s ease forwards;
+}
+
+@keyframes effecBackThumb {
+  from {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* MOVIMENTO ULTIMA THUMB ----------------------------------------------------------------------------*/
+.container.next .thumb .thumb-item:nth-last-child(1) {
+    animation: effeclastThumb 0.5s linear 1 forwards;
+}
+
+@keyframes effeclastThumb {
+  from {
+    width: 0;
+    opacity: 0;
+    }
+}
+
+/* ANIMAÇÃO TEXTO */
+
+.container .list .list-item:last-child .content .title,
+.container .list .list-item:last-child .content .description,
+.container .list .list-item:last-child .content .buttons {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 0.5s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.container .list .list-item:last-child .content .title{
+    animation-delay: 1s;
+}
+
+.container .list .list-item:last-child .content .description{
+    animation-delay: 1.3s;
+}
+
+.container .list .list-item:last-child .content .buttons{
+    animation-delay: 1.7s;
+}
+
+/* ANIMAÇÃO IMAGEM*/
+/* Next */
+.container.next .list .list-item:nth-last-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showMainImage 0.6s linear 1 forwards;
+}
+
+@keyframes showMainImage {
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+/* back */
+.container.back .list .list-item:nth-child(1) img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: hideMainImage 0.8s ease-in-out 1 forwards;
+  z-index: 2;
+}
+
+@keyframes hideMainImage {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0.3;
+    transform: scale(0.6);
+  }
+  100% {
+    width: 135px;
+    height: 200px;
+    border-radius: 10px;
+    left: 50%;
+    bottom: 50px;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/* FIM SLIDE*/
+
+/* INICIO DOS OUTROS CODIGOS*/
+
+.content {
+    max-width: 60rem;
+}
+
+.content h3 {
+    color: #fff;
+    font-size: 6rem;
+}
+
+.content p {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 100;
+    line-height: 2.5rem;
+    padding: 1rem 0;
+    
+}
+
+.title {
+    font-size: 4rem;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.title span {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+}
+
+.about .row .content {
+    padding: 2rem;
+}
+
+.about .row .content h3 {
+   font-size: 3rem;
+   color: #fff;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+   
+}
+
+.menu .box-container .box {
+    text-align: center;
+    border: 0.1rem solid var(--main-color);
+    padding: 5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu .box-container .box img {
+    height: 10rem;
+}
+
+.menu .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .price {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter; 
+}
+
+.menu .box-container .box:hover {
+    background-color: #fff; 
+}
+
+.menu .box-container .box:hover>* {
+    color: var(--black);
+}
+
+.review .box-container .box {
+    border: var(--main-color);
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 0.1rem solid var(--main-color);
+
+}
+
+.review .box-container .box p {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 2rem 0;
+    line-height: 1.8;
+    font-weight: lighter;
+}
+
+.review .box-container .box h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 1rem 0;
+}
+
+
+.review .box-container .box .user {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer .share {
+    padding: 1rem 0;
+    
+}
+
+.footer .share img {
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    
+}
+
+.footer .share img:hover {
+   
+    background-color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color); /* Adiciona borda inferior */
+    padding-bottom: 0.1rem; /* Espaçamento da borda */
+    
+}
+
+/* BOTÃO DE MENU (AS 3 SETINHAS DO CANTO SUPERIOR DIREITO) */
+.header--nav-toggle {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  width: 35px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1000; /* garante que fique por cima de tudo */
+}
+
+.header--nav-toggle:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px) scale(1.05);
+}
+
+.header--nav-toggle span,
+.header--nav-toggle span::before,
+.header--nav-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff; /* cor das linhas */
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
+}
+
+.header--nav-toggle span {
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+
+.header--nav-toggle span::before {
+  top: -10px; /* linha de cima */
+}
+
+.header--nav-toggle span::after {
+  top: 10px; /* linha de baixo */
+}
+
+/* ANIMAÇÃO QUANDO O MENU ESTÁ ATIVO (VIRA UM X) */
+.header--nav-toggle.is-active span {
+  background-color: transparent;
+}
+
+.header--nav-toggle.is-active span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.header--nav-toggle.is-active span::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+

@@ -16,14 +16,3 @@ A galeria de imagens principal utiliza JavaScript puro para criar um carrossel q
 | **`index.html`** | Estrutura semântica do site (Home, Menu, Avaliações, Contato). |
 | **`style.css`** | Responsável por todo o design, cores, e layout responsivo. |
 | **`script.js`** | Contém a lógica de navegação do menu e, principalmente, o **código do slider de imagens**. |
-
-## 📚 Seções do Site
-
-O website inclui as seguintes áreas de conteúdo:
-
-* **Home (Hero):** Seção de boas-vindas.
-* **Sobre:** Informações detalhadas sobre o projeto/negócio.
-* **Menu/Produtos:** Listagem de itens com preços e descrição.
-* **Avaliações (Review):** Área para feedback de clientes.
-* **Endereço:** Mapa do Google Maps e localização.
-
